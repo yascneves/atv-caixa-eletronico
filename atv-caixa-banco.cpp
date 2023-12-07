@@ -146,7 +146,7 @@ int main()
     }
   }
   printf("Seu saldo final é de\nR$%2.f\n"
-         "Estamos finalizando as operações."
+         "Estamos finalizando as operações.\n"
          "O BANCO agradece sua preferência!\n"
          "Tenha um ótimo dia.\n",
          saldo);
