@@ -13,10 +13,9 @@ void mostrarMenu(float saldo)
          "1. Saque\n"
          "2. Depósito\n"
          "3. Empréstimo\n"
-         "4. Investimentos\n"
-         "5. Consultar Saldo\n"
-         "6. Finalizar\n"
-         "Opção: ",
+         "4. Consultar Saldo\n"
+         "5. Finalizar\n"
+         "Opção:",
          saldo);
 }
 
@@ -105,14 +104,12 @@ float emprestimo(float saldo)
   return saldo;
 }
 
-// função 5.consultar saldo
+// função 4.consultar saldo
 float consultarSaldo(float saldo)
 {
   printf("\nSeu saldo é de R$%2.f\n", saldo);
   return saldo;
 }
-
-// função 6. finalizar
 
 int main()
 {
@@ -120,7 +117,7 @@ int main()
   float saldo = rand();
   int operacao = 0;
 
-  while (operacao != 6) // vai repetir enquanto for diferente de 5
+  while (operacao != 5) // vai repetir enquanto for diferente de 5
   {
     mostrarMenu(saldo);
     scanf("%d", &operacao);
@@ -139,14 +136,20 @@ int main()
     }
     else if (operacao == 4)
     {
+      saldo = consultarSaldo(saldo);
     }
     else if (operacao == 5)
     {
-      saldo = consultarSaldo(saldo);
+      break;
+    }
+    else
+    {
+      printf("\nOpção inválida. Retornando ao menu inicial...\n");
     }
   }
-  printf("Seu saldo final é de\nR$%2.f\n"
-         "Estamos finalizando as operações.\n"
+  printf("\nSeu saldo final é de:\n"
+         "\nR$%2.f\n"
+         "\nEstamos finalizando as operações.\n"
          "O BANCO agradece sua preferência!\n"
          "Tenha um ótimo dia.\n",
          saldo);
